@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/slick/slick.css">
-    <link rel="stylesheet" href="/slick/slick-theme.css">
+<link rel="stylesheet" href="/slick/slick-theme.css">
 
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -19,7 +19,8 @@
         <div class="autor__photo"><img src="./images/autor/autor.jpg" alt="lider"></div>
     </div></div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
 <script type="text/javascript" src="/slick/slick.min.js"></script>
 
 <script type="text/javascript">
@@ -29,7 +30,9 @@
             slidesToShow: 3,
             slidesToScroll: 1
       });
-     $('.single-item').slick(); 
+      $('.single-item-rtl').slick({
+            rtl: true
+        });
     });
 </script>
    
