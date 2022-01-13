@@ -1,5 +1,9 @@
-$('.slider').slick({
-  infinite: true,
-  slidesToShow: 2,
-  slidesToScroll: 3
+jQuery(document).ready(function() {
+		$('.slider').slick({
+
 });
+
+  
+
+});
+
