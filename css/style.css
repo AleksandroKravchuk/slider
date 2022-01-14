@@ -1,10 +1,60 @@
 body {
-    padding: 200px;
-    background-color: yellow;
+    padding: 300px;
+   background-color: skyblue;
 }
-.block {
-    width: 300px;
-    height: 60px;
-    background-color: aqua;
+.wrapper {
+     width: 300px;
+    height: 70px;
+    /* background-color: sandybrown; */
+} 
+.autor .slick-track {
+ 
+}
+.autor .slick-slide {
+ 
+}
+.autor__item {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    opacity: 0.4;
+    border-radius: 50%;
+    transform: scale(0.7);
+    transition: opacity 300ms linear, transform 300ms linear;
+}
+.autor__item.slick-center {
+   transform: scale(1);
+    opacity: 1;
+    
 }
 
+
+.mf {
+   padding-left: 500px;
+    
+}
+
+.fade {
+width: 300px;
+}
+
+.fade .slick-list {
+    border: 3px solid skyblue;
+    border-radius: 10%;
+    margin-top: 100px;
+    max-width: 300px;
+}
+.fade .autor__photo1 {
+    padding-top: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.circle {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    
+    border: 1px solid #D64374;
+}
