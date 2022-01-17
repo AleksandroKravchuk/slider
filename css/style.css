@@ -3,8 +3,8 @@ body {
    background-color: skyblue;
 }
 .wrapper {
-     width: 300px;
-    height: 70px;
+     /* width: 300px;
+    height: 70px; */
     /* background-color: sandybrown; */
 } 
 .autor .slick-track {
@@ -13,7 +13,7 @@ body {
 .autor .slick-slide {
  
 }
-.autor__item {
+.autor .autor__item {
     margin-left: 20px;
     margin-right: 20px;
     text-align: center;
@@ -22,7 +22,7 @@ body {
     transform: scale(0.7);
     transition: opacity 300ms linear, transform 300ms linear;
 }
-.autor__item.slick-center {
+.autor .autor__item.slick-center {
    transform: scale(1);
     opacity: 1;
     
@@ -57,4 +57,18 @@ width: 300px;
     border-radius: 50%;
     
     border: 1px solid #D64374;
+}
+.autor {
+    display: flex;
+    
+}
+.autor1 {
+display: flex;
+align-items: center;
+width:400px
+height: 300px
+
+}
+.autor1 .autor__item {
+    padding: 50px;
 }
