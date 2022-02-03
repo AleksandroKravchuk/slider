@@ -1,6 +1,64 @@
 body {
+    font-family: 'DM Sans',
+        sans-serif;
+    font-family: 'Titan One',
+        cursive;
+}
+
+body.modal-open-main {
+    overflow: hidden;
+}
+
+body.js-open-modal {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0px;
+}
+
+.container {
+    width        : 100%;
+    margin-left  : auto;
+    margin-right : auto;
+    padding-left : 10px;
+    padding-right: 10px;
+
+    @media screen and (min-width: 480px) {
+        width: 300px;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 720px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width        : 1080px;
+        padding-left : 15px;
+        padding-right: 15px;
+    }
+}
+
+ul {
+    list-style: none;
+    padding   : 0px;
+    margin    : 0px;
+}
+
+img {
+    display  : block;
+    max-width: 100%;
+
+}
+body {
     padding: 300px;
-   background-color: skyblue;
+   background-color:white;
 }
 .wrapper {
      /* width: 300px;
@@ -72,9 +130,16 @@ height: 300px
 .autor1 .autor__item {
     padding: 50px;
 }
+
+
+
 .slider {
-    padding-top   : 60px;
-    padding-bottom: 65px;
+cursor: pointer;
+   
+}
+
+ .slick-arrow {
+    visibility: hidden;
 }
 
 .slider__list-foto {
@@ -85,43 +150,43 @@ height: 300px
 
 
 .slider__list-foto {
+    background-color: transparent;
     text-align: center;
-    width     : 90px;
+    width     : 100px;
 }
 
 .slider__fon {
     text-align      : center;
     padding-top     : 28px;
-    width           : 280px;
-    height          : 380px;
-    background-color: #FAFAFA;
+    /* width           : 380px; */
+    height          : 180px;
+    background-color:red;
 
-    @media screen and (min-width: 768px) {
+    /* @media screen and (min-width: 768px) {
         padding-top: 32px;
         width      : 620px;
         height     : 164px;
-    }
+    } */
 
-    @media screen and (min-width: 1280px) {
+    /* @media screen and (min-width: 1280px) {
         width : 926px;
         height: 153px;
-    }
+    } */
 }
 
 .slider__text {
-    display                : inline-block;
+
     @include main-text ($fw: 500, $fs: 16px, $lx: 1.93, $color: $black-text-color, $ls: 0.04);
-    width                  : 157px;
+    width                  : 380px;
+    margin: 0 30px;
+    padding: 20px;
+    background-color: seagreen;
+}
+  
 
-    @media screen and (min-width: 768px) {
-        width: 460px;
-    }
+ 
 
-    @media screen and (min-width: 1280px) {
-        width: 690px;
-    }
-
-    &::before {
+    /* .slider__text::before {
         content          : "";
         display          : block;
         background-image : url(../images/slider/brackets@1x.jpg);
@@ -131,54 +196,50 @@ height: 300px
         background-size  : cover;
         margin-left      : -20px;
         margin-bottom    : -22px;
-    }
+    } */
 
-    &::after {
+    .slider__text::after {
         content            : "";
         display            : block;
-        background-image   : url(../images/point.svg);
+        background-image   : url(../images/dots.svg);
         width              : 32px;
         height             : 4px;
         background-repeat  : no-repeat;
         background-size    : cover;
         background-position: center;
-        margin-left        : 340px;
+       margin-left: auto;
+       margin-right: auto;
         margin-top         : 60px;
     }
 
-    @media screen and (min-width: 768px) {
+    /* @media screen and (min-width: 768px) {
         &::after {
             margin-left: 210px;
             margin-top : 60px;
         }
-    }
+    } */
 
-    @media screen and (min-width: 1280px) {
+    /* @media screen and (min-width: 1280px) {
         &::after {
             margin-top : 50px;
             margin-left: 330px;
         }
-    }
+    } */
 
 
-}
+
 
 .slider__city {
     text-align             : center;
     @include main-text ($fw: 500, $fs: 20px, $lx: 1.85, $color: $black-text-color, $ls: 0.04);
     margin-top             : 70px;
 
-    @media screen and (min-width: 1280px) {
+    /* @media screen and (min-width: 1280px) {
         margin-top: 34px;
-    }
+    } */
 }
 
-
-
-.slick-dots li {
-    visibility: hidden;
-
-    &::after {
+.slick-dots li::after {
         content            : "";
         display            : block;
         background-image   : url(../images/points.svg);
@@ -190,13 +251,20 @@ height: 300px
         visibility         : visible;
     }
 
+.slick-dots li {
+    visibility: hidden;
+
+    
+
 }
 
 /* Активная точка */
 .slick-dots li.slick-active {
     visibility: hidden;
 
-    &::after {
+   
+} 
+.slick-dots li.slick-active::after {
         content            : "";
         display            : block;
         background-image   : url(../images/house.svg);
@@ -207,4 +275,3 @@ height: 300px
         background-position: center;
         visibility         : visible;
     }
-}

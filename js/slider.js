@@ -1,7 +1,8 @@
 $(document).ready(function () {
            $('.slider__list-foto').slick({
             arrow: false,
-            fade: true,
+               fade: true,
+            
             asNavFor:".slider__list-text"
         });
 
@@ -12,8 +13,9 @@ $(document).ready(function () {
             centerMode: true,
             variableWidth: true,
             // appenDots: $(".content"),
-            dots:true,
-            asNavFor:".slider__list-foto"
+            dots: true,
+            asNavFor: ".slider__list-foto"
+            
         });
         $('.single-item-rtl').slick({
             rtl: true
