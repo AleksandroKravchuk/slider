@@ -151,3 +151,70 @@ for (let i = min; i <= max; i += 1) {
     
 }
 console.log(`Число: `, total) 
+
+// ЗАДАЧКА ПОКУПКИ ТОВАРА
+
+let manyBalance = 10000;
+const payment = 12000;
+
+console.log(`Общая стоимость заказа ${payment}. Проверяем наличие средств нв счету`);
+if (manyBalance >= payment) {
+    console.log(`ok`);
+    manyBalance -= payment;
+    console.log(`На счету осталось ${manyBalance}`)
+} else {
+    console.log(`Недостаточно средств на счету`)
+}
+console.log(`Операция завершена`)
+
+// ЗАДАЧКА ПОДСЧЕТА СУММЫ ПОКУПКИ
+
+// общая сумма потраченного
+let totalSpent = 4000;
+// сумма текущего платежа 
+let pay = 5000;
+// скидка
+let discont = 0;
+
+if (totalSpent < 100) {
+    discont = 0;
+} else if (totalSpent >= 100 && totalSpent < 1000) {
+    console.log(`Бронзовый парнер, скидка 2%`);
+    discont = 0.02;
+} else if(totalSpent >= 1000 && totalSpent < 5000) {
+    console.log(`Cеребряный парнер, скидка 5%`);
+    discont = 0.05;
+} else  {
+     console.log(`Золотой парнер, скидка 10%`);
+    discont = 0.1; 
+}
+pay = pay - pay * discont;
+console.log(`Оформляем заказ на сумму ${pay} со скидкой ${discont * 100}%`);
+
+totalSpent += pay;
+
+console.log(`Общая сумма потраченного в магазине ${totalSpent}`)
+
+
+
+// Пример инпут и кнопка
+  
+const btnAdd = document.querySelector(`button[data-add]`);
+const btnReset = document.querySelector(`button[data-reset]`);
+const valueInput = document.querySelector(`input[data-value]`);
+const finalSumma = document.querySelector(`span`);
+let toTal = 0;
+btnAdd.addEventListener(`click`, function () {
+    
+    console.log(`click hehehe`);
+    const value = Number(valueInput.value);
+    toTal += value;
+  console.log(toTal);
+    valueInput.value = ``;
+    finalSumma.textContent = toTal;
+      
+})
+
+btnReset.addEventListener(`click`, function () {
+    finalSumma.textContent = 0;
+})
