@@ -234,8 +234,24 @@ function checkStorage (available = 30, ordered = 40) {
 //     message = "The order is accepted, our manager will contact you";
 //   }
 
-  // Change code above this line
+  
     // return message;
     console.log( message);
 };
-checkStorage();
+checkStorage()
+
+
+function multiply(a, b){
+    let com = a * b;
+  console.log( com );
+}
+multiply(3,134)
+
+
+first: for (let num = 0; num < 5; num++){
+
+    for (let size = 0; size < 7; size++){
+        console.log(size);
+        if (size == 5) {break first;}
+    }
+}
