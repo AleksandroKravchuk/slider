@@ -218,3 +218,24 @@ btnAdd.addEventListener(`click`, function () {
 btnReset.addEventListener(`click`, function () {
     finalSumma.textContent = 0;
 })
+
+
+// const available = 20;
+// const ordered = 10;
+function checkStorage (available = 30, ordered = 40) {
+    
+  let message;
+  // Change code below this line
+
+     message = ordered > available ? "Not enough goods in stock!" : "The order is accepted, our manager will contact you";
+//    if (ordered > available) {
+//     message = "Not enough goods in stock!";
+//   } else {
+//     message = "The order is accepted, our manager will contact you";
+//   }
+
+  // Change code above this line
+    // return message;
+    console.log( message);
+};
+checkStorage();
