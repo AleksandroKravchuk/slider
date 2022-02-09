@@ -255,3 +255,93 @@ first: for (let num = 0; num < 5; num++){
         if (size == 5) {break first;}
     }
 }
+
+// ПРИМЕРЫ ФУНКЦИЙ
+
+function calkSum(numOne, numTwo, more, less) {
+    let numSum = numOne + numTwo;
+    if (numSum > 3) {
+        more();
+    } else {
+        less();
+    }
+}
+function showMoreMessage() {
+    console.log(`Больше чем 3`);
+}
+function showLessMessage() {
+    console.log(`Меньше чем 3`);
+}
+calkSum(3, 3, showMoreMessage, showLessMessage)
+
+function calk(numOne, numTwo) {
+    let result = 1;
+    for (let i = 0; i < numTwo; i++){
+        result *= numOne;
+    }
+    return result;
+}
+console.log(calk(2, 3))
+
+
+function calKul(numOne, numTwo) {
+    if (numTwo === 1) {
+        return numOne;
+    } else {
+        return numOne * calKul(numOne, numTwo - 1)
+    }
+}
+console.log(calKul(2,3))
+
+// ПРИМЕР ФУНКЦИОНАЛЬНОГО ВЫРАЖЕНИЯ
+
+let getMessage = (text, name) => text +`, `+ name + `!`;
+console.log(getMessage(`Привет`, `Макс`));
+
+
+
+// ПРИМЕР ПОЯВЛЕНИЯ ТЕКСТ С ЗАДЕРЖКОЙ
+
+function showMessage(text, name) {
+    console.log(`${text}`, `${name}!`)
+}
+setTimeout(showMessage, 3000, `Привет`, `Макс`);
+
+// ПРИМЕР ПОВЛЯЮЩИХСЯ ЧИСЕЛ
+
+function showNumber(num) {
+    console.log(num);
+    if (num < 10 && num > -5) {
+        setTimeout(showNumber, 1000, --num);
+    }
+}
+setTimeout(showNumber, 1000, 9);
+
+// ПРИМЕР ОСТАНОВКА TIMEOUT
+
+function showNumb(num) {
+    console.log(num);
+    let timeId = setTimeout(showNumb, 1000, ++num);
+    if (num === 7) {
+        clearTimeout(timeId);
+    }
+}
+setTimeout(showNumb, 1000, 1)
+
+// ПРИМЕР ВЫЗОВА ВЛОЖЕННОЙ ФУНКЦИИ
+
+let shoowMess;
+if (2 > 1) {
+   shoowMess = function() {
+        console.log(`Повідомлення`)
+    }
+}
+shoowMess();
+
+function showName() {
+    console.log(`Вася!`);
+}
+// showName()
+setTimeout(showName, 0);
+console.log(`Петя!`)
+
