@@ -359,15 +359,21 @@ for (const my of club) {
 }
 console.log(text);
 
-// function getExtremeElements(array = [1, 2, 3, 4, 5]) {
-//     for (let i = 0; i > 0 && i < array.length; i += 1){
-//         array continue ;
-//     }
-//     console.log(array);
-//     }
-
-//   const last = array.length - 1;
-// let res = array[0,last];
-//     console.log(res);
-// }
+function getExtremeElements(array = [ 2, 3, 4, 5]) {
+    const last = array.length - 2;
+    array.splice(1,last);
+    console.log(array);
+}
 getExtremeElements()
+
+function slugify(title) {
+title =  "\"How to become a JUNIOR developer in TWO WEEKS";
+const name = title.toLowerCase();
+
+    let slug = name.split(" ");
+    
+
+    console.log (slug.join("-"));
+
+}
+slugify()
