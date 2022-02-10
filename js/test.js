@@ -309,39 +309,65 @@ setTimeout(showMessage, 3000, `Привет`, `Макс`);
 
 // ПРИМЕР ПОВЛЯЮЩИХСЯ ЧИСЕЛ
 
-function showNumber(num) {
-    console.log(num);
-    if (num < 10 && num > -5) {
-        setTimeout(showNumber, 1000, --num);
-    }
-}
-setTimeout(showNumber, 1000, 9);
+// function showNumber(num) {
+//     console.log(num);
+//     if (num < 10 && num > -5) {
+//         setTimeout(showNumber, 1000, --num);
+//     }
+// }
+// setTimeout(showNumber, 1000, 9);
 
 // ПРИМЕР ОСТАНОВКА TIMEOUT
 
-function showNumb(num) {
-    console.log(num);
-    let timeId = setTimeout(showNumb, 1000, ++num);
-    if (num === 7) {
-        clearTimeout(timeId);
+// function showNumb(num) {
+//     console.log(num);
+//     let timeId = setTimeout(showNumb, 1000, ++num);
+//     if (num === 7) {
+//         clearTimeout(timeId);
+//     }
+// }
+// setTimeout(showNumb, 1000, 1)
+
+// // ПРИМЕР ВЫЗОВА ВЛОЖЕННОЙ ФУНКЦИИ
+
+// let shoowMess;
+// if (2 > 1) {
+//    shoowMess = function() {
+//         console.log(`Повідомлення`)
+//     }
+// }
+// shoowMess();
+
+// function showName() {
+//     console.log(`Вася!`);
+// }
+// // showName()
+// setTimeout(showName, 0);
+// console.log(`Петя!`)
+
+const club = ["Динамо", "Шахтер", "Ворскла", "Черноморец"];
+const myClub = "Динамо";
+let text;
+
+for (const my of club) {
+    if (my === myClub) {
+        text = `Это мой клуб!`
+        break;
+    } else {
+        text = `Моего клуба здесь нет!`
     }
 }
-setTimeout(showNumb, 1000, 1)
+console.log(text);
 
-// ПРИМЕР ВЫЗОВА ВЛОЖЕННОЙ ФУНКЦИИ
+// function getExtremeElements(array = [1, 2, 3, 4, 5]) {
+//     for (let i = 0; i > 0 && i < array.length; i += 1){
+//         array continue ;
+//     }
+//     console.log(array);
+//     }
 
-let shoowMess;
-if (2 > 1) {
-   shoowMess = function() {
-        console.log(`Повідомлення`)
-    }
-}
-shoowMess();
-
-function showName() {
-    console.log(`Вася!`);
-}
-// showName()
-setTimeout(showName, 0);
-console.log(`Петя!`)
-
+//   const last = array.length - 1;
+// let res = array[0,last];
+//     console.log(res);
+// }
+getExtremeElements()
