@@ -367,7 +367,7 @@ function getExtremeElements(array = [ 2, 3, 4, 5]) {
 getExtremeElements()
 
 function slugify(title) {
-title =  "\"How to become a JUNIOR developer in TWO WEEKS";
+title =  "How to become a JUNIOR developer in TWO WEEKS";
 const name = title.toLowerCase();
 
     let slug = name.split(" ");
@@ -377,3 +377,24 @@ const name = title.toLowerCase();
 
 }
 slugify()
+
+function makeArray(firstArray = [1, 2, 4, 8], secondArray = [9], maxLength = 5) {
+    const endArray = firstArray.concat(secondArray);
+    if (endArray.length <= maxLength) {
+        console.log(endArray);
+    } else {
+        console.log(endArray.slice(0,maxLength));
+    }
+}
+makeArray()
+  
+function calculateTotal(number = 7) {
+      
+for (let i = 0; i <= number; i += 1){
+    //  i += i;
+    console.log(i); 
+    
+}
+   
+}
+calculateTotal()
