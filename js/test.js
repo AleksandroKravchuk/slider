@@ -388,11 +388,55 @@ function makeArray(firstArray = [1, 2, 4, 8], secondArray = [9], maxLength = 5) 
 }
 makeArray()
   
-function calculateTotal(number = 2) {
-    let i;  
-for ( i = 1; i <= number; i += 1){
-     i += i;
-}
-   console.log(i); 
+
+// ПРИМЕР СЛОЖЕНИЯ ВВОДИМЫХ ЧИСЕЛ
+
+function calculateTotal(number = 18) {
+    let rez=0;
+    for (let i = 1; i <= number; i += 1){
+         rez = rez + i;
+    }
+    console.log(rez);
+
 }
 calculateTotal();
+
+
+
+const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+for (let i = 0; i < fruits.length; i+= 1) {
+  const fruit = fruits[i]; 
+  console.log(fruit);
+}
+
+
+// ПРИМЕР ПОДСЧЕТА ВСЕХ ВВЕДЕННЫХ ЧИСЕЛ
+
+function calculateTotalPrice(order = [12,10,20,5]) {
+    let total = 0;
+    for (let i = 0; i < order.length; i += 1){
+        total = total + order[i];
+    }
+ console.log(total)
+}
+calculateTotalPrice()
+
+
+// ПРИМЕР ПОИСКА САМОГО ДЛИННОГО СЛОВА
+function findLongestWord(string = "Макс самый высокий парень") {
+    let words = string.split(" ");
+    let longest = words[0];
+    console.log(words);
+    for (const word of words) {
+        if (word.length > longest.length) {
+            longest = word;
+       }
+    }
+    console.log(longest); 
+}
+findLongestWord()
+
+
+// ПРИМЕР ИЗМЕНЕНИЯ РЕГИСТРА КАЖДОЙ БУКВЫ В СЛОВЕ
+
