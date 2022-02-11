@@ -388,13 +388,11 @@ function makeArray(firstArray = [1, 2, 4, 8], secondArray = [9], maxLength = 5) 
 }
 makeArray()
   
-function calculateTotal(number = 7) {
-      
-for (let i = 0; i <= number; i += 1){
-    //  i += i;
-    console.log(i); 
-    
+function calculateTotal(number = 2) {
+    let i;  
+for ( i = 1; i <= number; i += 1){
+     i += i;
 }
-   
+   console.log(i); 
 }
-calculateTotal()
+calculateTotal();
