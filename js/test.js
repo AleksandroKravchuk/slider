@@ -440,3 +440,83 @@ findLongestWord()
 
 // ПРИМЕР ИЗМЕНЕНИЯ РЕГИСТРА КАЖДОЙ БУКВЫ В СЛОВЕ
 
+const changeCase = function (string) {
+    const letters = string.split("");
+    let invertedString = " ";
+
+    for (const letter of letters) {
+        const isInLowerCase = letter === letter.toLowerCase();
+        invertedString += isInLowerCase ? letter.toUpperCase() : letter.toLowerCase();
+    }
+
+    return invertedString;
+}
+console.log(changeCase("Александр КРавчУК"));
+
+
+// ПРИМЕР SLUG
+
+const slugiFy = function (string) {
+    
+    return string.toLowerCase().split(" ").join("-");
+}
+
+console.log(slugiFy("Я самый крутой чувак"))
+
+
+// ПРИМЕР ФИЛЬТРОВАНИЯ ЧИСЕЛ МАССИВ и НЕ МАССИВ
+
+const filterNumbers = function (array, ...args) {
+    const unicElements = [];
+
+    for (const element of array) {
+        if (args.includes(element)) {
+            unicElements.push(element);
+        }
+    }
+    return unicElements;
+}
+
+
+
+console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
+
+
+// ПРИМЕР ДОБАВЛЕНИЯ ЧИСЕЛ В МАССИВ ОТ МИН К МАКС
+
+
+function createArrayOfNumbers(min, max) {
+  const numbers = [];
+    for (let i = min; i <= max; i += 1){
+         numbers.push(i);
+    }
+  return numbers;
+}
+console.log(createArrayOfNumbers(2,7))
+
+
+// СОДАНИЕ НОВОГО МАССИВВА
+function filterArray(numbers, value) {
+    const unicElements = [];
+
+    for (const number of numbers) {
+        if (number > value) {
+            unicElements.push(number);
+        }
+    }
+    return unicElements;
+}
+console.log(filterArray([12, 24, 8, 41, 76], 20))
+
+
+
+function includes(array, value) {
+ 
+for(const element of array){
+  if(element === value) {
+      return true;
+    }
+    }
+ return false;
+}
+    console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
