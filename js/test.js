@@ -529,8 +529,10 @@
 // * Индекс массы тела необходимо округлить до одной цифры после запятой;
 //  */
 
-// let weight = '88,3';
-// let height = '1.75';
+let weight = '88,3';
+let height = '1.75';
+
+
 
 //  * Напиши скрипт который проверяет заканчивается ли значение переменной link символом /. Если нет, добавь в конец значения link этот символ. Используй конструкцию if...else.
 //  */
@@ -539,14 +541,10 @@ let link = 'https://my-site.com/about';
 
 const last = "/";
 for (let index = 0; index < link.length; index++) {
-    const element = link[link.length-1];
+    const element = link[link.length - 1];
     if(last !== element){
-console.log(link+last )
-
+    
     }
+    link = (link+last )
+    console.log(link )
 }
-//  if(letter )
-// for (const letter of link) {
-//     console.log(letter)
-// }
-// console.log(link.length - 1)
