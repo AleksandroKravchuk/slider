@@ -591,41 +591,204 @@ console.log(Math.floor(numb))
 // }
 // console.log(apartment)
 
-const apartment = {
-  descr: "Spacious apartment in the city center",
-  rating: 4,
-  price: 2153,
-};
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
 
-const keys = [];
-const values = [];
-for (const key in apartment) {
-    keys.push(key);
-    values.push(apartment[key]); 
-} 
-console.log(keys);
-console.log(values);
+// const keys = [];
+// const values = [];
+// for (const key in apartment) {
+//     keys.push(key);
+//     values.push(apartment[key]); 
+// } 
+// console.log(keys);
+// console.log(values);
 
 
 // ПИРИМЕР КОРЗИНЫ ПОКУПКИ ПРОДУКТОВ
 
-const cart = {
-    items: [],
-    getItems() { },
-    add(product) { },
-    remove(productName) { },
-    clear() { },
-    countTotalPrice() { },
-    increaseQuantity(productName) { },
-    decreaseQuantity(productName) {},
+// const cart = {
+//     items: [],
+//     getItems() { },
+//     add(product) { },
+//     remove(productName) { },
+//     clear() { },
+//     countTotalPrice() { },
+//     increaseQuantity(productName) { },
+//     decreaseQuantity(productName) {},
+// }
+
+
+// cart.add({ name: , price: 50 });
+// cart.add({ name: , price: 60 });
+// cart.add({ name: , price: 60 });
+// cart.add({ name: , price: 110 });
+
+
+
+// cart.remove();
+
+const keys = [];
+const values = [];
+const advert = {
+    service: "apt",
+};
+const apartment = Object.create(advert);
+apartment.descr = "Spacious apartment in the city center";
+apartment.rating = 4;
+apartment.price = 2153;
+
+for (const key in apartment) {
+    // Change code below this line
+    if (apartment.hasOwnProperty(key)) {
+    keys.push(key);
+    }
+    if (apartment.hasOwnProperty(key)) {
+     values.push(apartment[key]);
+}
+} console.log(keys)
+console.log(values)
+    
+
+//     function countProps(object) {
+//         let propCount = 0;
+        
+//         for (const obj in object) {
+//         if (object.hasOwnProperty(obj)) {
+//             propCount = Object.values(object).length;
+//         }
+//     }
+//         console.log(propCount)
+// }
+// countProps({  })
+
+
+
+// const apartments = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
+// const valueses = [];
+
+
+// Change code below this line
+// const keyses = Object.keys(apartments);
+// for (const key of Object.values(apartments)) {
+//     valueses.push(key);
+// }
+// console.log(keyses)
+// console.log(valueses)
+
+// function countProps(object) {
+//     // Change code below this line
+//     let propCount = 0;
+//     const value = Object.keys(object).length;
+ 
+//     console.log(value)
+// }
+//     countProps({ name: "Mango", age: 2 })
+
+// function countTotalSalary(salaries) {
+//   let totalSalary = 0;
+//   // Change code below this line
+// const salary = Object.values(salaries);
+    
+// for (const sal of salary){
+//     totalSalary += sal;
+// }
+//   // Change code above this line
+//  console.log(totalSalary)
+// }
+// countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 })
+
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getProductPrice(productName) {
+//   // Change code below this line
+//     let message;
+// for(const product of products){
+//   if (product.name === productName){
+//       message = product.price;
+//       break;
+//   }
+//      message = null;
+//     }
+//     console.log( message)
+// }
+// getProductPrice("Scanner")
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getAllPropValues(propName) {
+//     const name = [];
+  
+//     for (const product of products) {
+//         const keys = Object.keys(product);
+        
+//         for (const key of keys) {
+//             if (key === propName) {
+//                 name.push(product[key]);
+//         }   
+//         }
+//     }
+//     console.log(name);
+// }
+// getAllPropValues("name")
+
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getAllPropValues(propName) {
+//     const name = [];
+//     for (const product of products) {
+//     const keys = Object.keys(product);
+//         if (keys.includes(propName)) {
+//         name.push(product[propName]);   
+//         }
+       
+//     }
+  
+//     console.log(name);
+    
+// }
+// getAllPropValues("price")
+
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function calculateTotalp(productName) {
+    let price = 0;
+    for (const product of products) {
+        if (product.name === productName) {
+        price = product.price * product.quantity
+    }
 }
 
+console.log(price)
 
-cart.add({ name: , price: 50 });
-cart.add({ name: , price: 60 });
-cart.add({ name: , price: 60 });
-cart.add({ name: , price: 110 });
-
-
-
-cart.remove();
+}
+calculateTotalp("Grip")
