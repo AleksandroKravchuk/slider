@@ -773,22 +773,161 @@ console.log(values)
 // getAllPropValues("price")
 
 
-const products = [
-  { name: "Radar", price: 1300, quantity: 4 },
-  { name: "Scanner", price: 2700, quantity: 3 },
-  { name: "Droid", price: 400, quantity: 7 },
-  { name: "Grip", price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
 
-function calculateTotalp(productName) {
-    let price = 0;
-    for (const product of products) {
-        if (product.name === productName) {
-        price = product.price * product.quantity
+// function calculateTotalp(productName) {
+//     let price = 0;
+//     for (const product of products) {
+//         if (product.name === productName) {
+//         price = product.price * product.quantity
+//     }
+// }
+
+// console.log(price)
+
+// }
+// calculateTotalp("Grip")
+
+// function makeTask(data) {
+//   const completed = false;
+//   const category = "General";
+//   const priority = "Normal";
+//     const rezult = { completed, category, priority, ...data };
+    
+//     return rezult;
+// }
+// console.log(makeTask({category: "Homemade", priority: "Low", text: "Take out the trash"}))
+
+// function add(...args) {
+//     let sum = 0;
+//     for (const arg of args) {
+//         sum += arg;
+//  }
+//     return sum;
+// }
+// console.log(add(15, 27))
+
+// function addOverNum(num,...args) {
+//   let total = 0;
+
+//     for (const arg of args) {
+//         if (arg > num) {
+//        total += arg;   
+//       }
+    
+//   }
+
+//   return total;
+// }
+
+// console.log(addOverNum(20, 74, 11, 62, 46, 12, 36))
+
+// function findMatches(numFirst,...numSecond) {
+//   const matches = [];
+
+//     for (const numF of numSecond) {
+//         if (numFirst.includes(numF))
+//             matches.push(numF);    
+//     }
+//   // Change code above this line
+//   return matches;
+// }
+
+// console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2))
+
+
+// const bookShelf = {
+//   books: ["The last kingdom", "Haze", "The guardian of dreams"],
+//     updateBook(oldName, newName) {
+      
+//         if (this.books.includes(oldName)) {
+//               this.books.splice(this.books.indexOf(oldName), 1, newName)
+//           } 
+    
+//    return this.books;   
+//   },
+// };
+// console.log(bookShelf.updateBook("The last kingdom", "Dune"))
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+ 
+// getPotions(){
+// return this.potions;
+// },
+// }
+// console.log(atTheOldToad.getPotions())
+
+// const atTheOldToad = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   removePotion(potionName) {
+   
+// this.potions.splice(this.potions.indexOf(potionName) , 1);
+// return this.potions
+//   },
+// }
+// console.log(atTheOldToad.removePotion("Dragon breath"))
+
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+
+    
+  // Change code below this line
+  getPotions() {
+      return this.potions ;
+     
+  },
+    addPotion(newPotion) {
+        for (const potion of this.potions) {
+            
+         if (potion.name === newPotion.name) {
+      return `Error! Potion ${newPotion.name} is already in your inventory!`;
+    } 
+      }
+        return this.potions.push(newPotion);
+    },
+  removePotion(potionName) {
+    
+      for (const potion of this.potions) {
+          if (potion.name === potionName) {
+              const potionIndex = this.potions.indexOf(potion);
+                return  this.potions.splice(potionIndex, 1);
     }
 }
-
-console.log(price)
-
+   return `Potion ${potionName} is not in inventory!`;
+  },
+  updatePotionName(oldName, newName) {
+    
+      for (const potion of this.potions) {      
+     if (potion.name === oldName) {
+      return potion.name = newName;
+    }    
 }
-calculateTotalp("Grip")
+ return `Potion ${oldName} is not in inventory!`;  
+
+   
+  },
+  
+};
+
+console.log(atTheOldToad.addPotion({ name: "Speed potio", price: 240 })) 
+console.log(atTheOldToad.removePotion("Speed potion")) 
+console.log(atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"))
+console.log(atTheOldToad.getPotions()) 
+
+
+
+
+
+
+
+// console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }))
