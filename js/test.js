@@ -948,4 +948,102 @@ function lastNumber(number) {
 console.log(lastNumber([1,2,9,9]))
 
 
+// const fnA = function (message, callback) {
+//     console.log(message);
+//     // console.log(callback);
+//     callback();
+// }
 
+// const fnB = function () {
+//     console.log(`Это лог при вызове fnB`)
+// }
+// fnA (`сообщение`,fnB )
+
+const filter = function (array, test) {
+    const filteArray = [];
+
+    for (const el of array) {
+        // console.log(el);
+        
+
+        if (test(el)) {
+            filteArray.push(el);
+        }
+    }
+    // console.log(filteArray);
+    return filteArray;
+    
+}
+
+// const callback1 = value =>value >= 3;
+    
+
+const r1 = filter([1, 2, 3, 4, 5], value =>value >= 3);
+console.log(r1);
+
+const r2 = filter([1, 2, 3, 4, 5, 8, 98, 70], value => value >= 5);
+
+console.log(r2);
+
+// ЗАМЫКАНИЕ ФУНКЦИЙ
+
+const fnA = function (parametr) {
+    const inner = `значение внутренней переменной функции A`
+      
+    const innerFunction = function (a,b) {
+        console.log(parametr);
+        console.log(inner);
+        console.log(`Это вызов функции innerFun`)
+        console.log(a*b);
+    };
+    return innerFunction;
+}
+// console.log(fnA)
+const fnB = fnA(555);
+fnB(2,4,);
+// console.log(fnB);
+
+// function deliverPizza(pizzaName) {
+//   return `Delivering ${pizzaName} pizza.`;
+// }
+
+// function makePizza(pizzaName) {
+//   return `Pizza ${pizzaName} is being prepared, please wait...`;
+// }
+
+// // Chande code below this line
+// function makeMessage(pizzaName, callback) {
+//     return callback(pizzaName); 
+// }
+
+// console.log(makeMessage("Ultracheese", deliverPizza));
+// console.log(makeMessage("Royal Grand", makePizza))
+
+const pizzaPalace = {
+  pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+    order(pizzaName, callback, callback1) {
+        if(this.pizzas.includes(pizzaName)){
+          return callback(pizzaName);  
+        } return callback1(pizzaName);
+        
+  },
+};
+// Change code above this line
+
+// Callback for onSuccess
+function makePizza(pizzaName) {
+  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+}
+// Callback for onError
+function onOrderError(error) {
+  return `Error! There is no pizza with a name ${error} in the assortment.`;
+}
+
+// Method calls with callbacks
+pizzaPalace.order('Smoked', makePizza, onOrderError);
+pizzaPalace.order('Four meats', makePizza, onOrderError);
+pizzaPalace.order('Big Mike', makePizza, onOrderError);
+pizzaPalace.order('Vienna', makePizza, onOrderError);
+
+// console.log(pizzaPalace.order("Four meats", makePizza, onOrderError))
+console.log(pizzaPalace.order("Big Mike", makePizza, onOrderError))
