@@ -1030,20 +1030,266 @@ const pizzaPalace = {
 };
 // Change code above this line
 
+
+
+
+
 // Callback for onSuccess
-function makePizza(pizzaName) {
-  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
-}
-// Callback for onError
-function onOrderError(error) {
-  return `Error! There is no pizza with a name ${error} in the assortment.`;
-}
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! There is no pizza with a name ${error} in the assortment.`;
+// }
 
-// Method calls with callbacks
-pizzaPalace.order('Smoked', makePizza, onOrderError);
-pizzaPalace.order('Four meats', makePizza, onOrderError);
-pizzaPalace.order('Big Mike', makePizza, onOrderError);
-pizzaPalace.order('Vienna', makePizza, onOrderError);
+// // Method calls with callbacks
+// pizzaPalace.order('Smoked', makePizza, onOrderError);
+// pizzaPalace.order('Four meats', makePizza, onOrderError);
+// pizzaPalace.order('Big Mike', makePizza, onOrderError);
+// pizzaPalace.order('Vienna', makePizza, onOrderError);
 
-// console.log(pizzaPalace.order("Four meats", makePizza, onOrderError))
-console.log(pizzaPalace.order("Big Mike", makePizza, onOrderError))
+// // console.log(pizzaPalace.order("Four meats", makePizza, onOrderError))
+// console.log(pizzaPalace.order("Big Mike", makePizza, onOrderError))
+
+
+
+
+
+
+// function calculate (orderedItems) {
+//   let totalPrice = 0;
+
+//     orderedItems.forEach(function (element) {
+//         totalPrice += element;
+//     })
+ 
+//   return totalPrice;
+// }
+
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176]))
+
+
+
+// function filterArr(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+
+//     numbers.forEach(element => {
+//         if (element > value) {
+//             filteredNumbers.push(element);
+//         }
+//     });
+    
+//   return filteredNumbers;
+// }
+// console.log(filterArr([1, 2, 3, 4, 5], 4))
+
+
+
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
+
+//    firstArray.forEach(element => {
+//         if (secondArray.includes(element)){
+//             commonElements.push(element);
+//     }
+    
+// });
+
+//   return commonElements;
+//   // Change code above this line
+// }
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]))
+
+
+
+// const calculateTot = (orderedItems) => {
+//   let totalPrice = 0;
+// orderedItems.forEach(element => {
+//      totalPrice += element
+// });
+
+//   return totalPrice;
+// }
+// console.log(calculateTot([12, 85, 37, 4]))
+
+
+
+// const changeEven = (numbers, value) => {
+//   // Change code below this line
+//     const NewArrow = [];
+//   numbers.forEach((number)=>{
+//     if (number % 2 === 0) {
+//         NewArrow.push(number + value);
+    
+//       } else if (number % 2 !== 0)
+//       NewArrow.push(number);
+//   })
+//     return NewArrow;
+//   // Change code above this line
+// }
+
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10))
+
+
+
+const getUsersWithFriend = (users, friendName) => {
+  
+    // return users.filter((user) => user.friends === friendName);
+    console.log(users.filter((user) => user.friends === friendName))
+   console.log(friendName)
+};
+
+    console.log(getUsersWithFriend([
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+    age: 21
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+    age: 27
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+    age: 38
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+    age: 39
+  }
+], "Sharron Pace"));
+
+
+
+const getUsersWithAge = (users, minAge, maxAge) => {
+ return users.filter((user)=>user.age === maxAge)
+
+};
+console.log(getUsersWithAge([
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male",
+    age: 37
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female",
+    age: 34
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male",
+    age: 24
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female",
+    age: 21
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male",
+    age: 27
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male",
+    age: 38
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female",
+    age: 39
+  }
+],10,37))
