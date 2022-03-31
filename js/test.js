@@ -1479,7 +1479,7 @@ console.log(getSortedFriends([
 
 
 const getTotalBalanceByGender = (users, gender) => {
-return users((user => user.balance))
+return users.filter((user)=> user.gender === gender).map((item)=> item.balance).reduce((acc, element)=>acc+element)
 };
 console.log(getTotalBalanceByGender([
   {
@@ -1546,3 +1546,51 @@ console.log(getTotalBalanceByGender([
     gender: "female"
   }
 ], "male"))
+
+
+const pizzaPalace1= {
+  pizzas: ["Supercheese", "Smoked", "Four meats"],
+  // Change code below this line
+  checkPizza(pizzaName) {
+    return this.pizzas.includes(pizzaName);
+  },
+  order(pizzaName) {
+    const isPizzaAvailable = this.checkPizza(pizzaName);
+
+    if (!isPizzaAvailable) {
+      return `Sorry, there is no pizza named «${pizzaName}»`;
+    }
+
+    return `Order accepted, preparing «${pizzaName}» pizza`;
+   
+  },
+  // Change code above this line
+  
+};
+
+console.log(pizzaPalace1.order("Four meats"))
+console.log(pizzaPalace1. checkPizza("Four meats"))
+
+
+class Storage {
+    constructor (items){
+        this.items = items;
+    }
+   getItems(){
+       return this.items;
+   } 
+   addItem(newItem) {
+       return this.items.push(newItem);
+   }
+  removeItem(itemToRemove) {
+    return this.items.splice(this.items.indexOf(itemToRemove),1);
+  } 
+}
+
+// Change code above this line
+const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage.addItem("Droid");
+console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage.removeItem("Prolonger");
+console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
