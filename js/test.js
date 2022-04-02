@@ -1594,3 +1594,38 @@ storage.addItem("Droid");
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
 storage.removeItem("Prolonger");
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+
+class StringBuilder {
+  constructor(value) {
+    
+    this.value = value;
+  }
+    getValue() {
+      return this.value;
+  }
+  
+  padStart(str) {
+ 
+    return this.value =str+this.value;
+    
+    }
+  padEnd(str) {
+     
+    return  this.value =this.value + str;
+  }
+  padBoth(str) {
+    return this.value = str + this.value + str;
+  }
+}
+
+
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
