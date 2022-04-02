@@ -1,19 +1,19 @@
-const { config } = require("process");
+// const { config } = require("process");
 
-const name = "Aleksandr";
-let number = "43px";
-const bull = true;
-const bullN = false;
+// const name = "Aleksandr";
+// let number = "43px";
+// const bull = true;
+// const bullN = false;
 
 
 // let should = prompt(name);
 // should = Number(should);
 // console.log(should);
 // console.log(typeof should)
-const result = Number.parseInt(number);
-console.log(result)
+// const result = Number.parseInt(number);
+// console.log(result)
 
-const balance = 1000;
+// const balance = 1000;
 // let massege;
 
 // if (balance >= 0) {
@@ -22,9 +22,9 @@ const balance = 1000;
 //     massege = "Негативный баланc"
 // }
 
-const massege = balance >= 0 ? "Позитивный баланc" : "Негативный баланc";
+// const massege = balance >= 0 ? "Позитивный баланc" : "Негативный баланc";
 
-console.log(massege)
+// console.log(massege)
 
 
 // ПРИМЕР СВИЧ
@@ -1598,10 +1598,10 @@ storage.removeItem("Prolonger");
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 
-class StringBuilder {
-  constructor(value) {
-
-    this.value = value;
+class StringBuilder  {
+  constructor(initialValue) {
+    this.value = initialValue;
+    
   }
   getValue() {
     return this.value;
@@ -1609,15 +1609,15 @@ class StringBuilder {
 
   padStart(str) {
 
-    return this.value = str + this.value;
+    return this.value = str + this.getValue();
 
   }
   padEnd(str) {
 
-    return this.value = this.value + str;
+    return this.value = this.padStart() + str;
   }
   padBoth(str) {
-    return this.value = str + this.value + str;
+    return this.value = str + this.padEnd() + str;
   }
 }
 
@@ -1633,9 +1633,38 @@ builder.padBoth("=");
 console.log(builder.getValue()); // "=^.^="
 
 
-// const CounterPlugin = function (config) {
-//   console.log(config);
-//  };
+const CounterPlugin = function ({ initialValue = 0, step = 1 } = {}) {
+  console.log(this._value = initialValue) ;
+  console.log(this._step = step) ;
+  
+ };
+CounterPlugin.prototype.increment = function () {
+  this._value += this._step;
+}
 
+const counter = new CounterPlugin({ step: 3 });
+console.log(counter);
+counter.increment();
+console.log(counter)
 
-// const counter = new CounterPlugin();
+const str = 'abrakadabra';
+// { a: 5, b: 2, r: 2, k: 1, d: 1 }
+const res = str.split(``)
+  .reduce((acc, elem) =>
+({...acc, 
+[elem]: acc[elem]? acc[elem]+1:1}),{})
+
+console.log(res)
+
+// const obj = {
+//   a: 3,
+//   b: 1,
+// };
+
+// const letter = 'b';
+// const newObj = {
+//   ...obj,
+//   [letter]: obj[letter] + 10,
+// };
+
+// console.log(newObj);
