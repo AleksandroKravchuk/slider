@@ -1,3 +1,5 @@
+const { config } = require("process");
+
 const name = "Aleksandr";
 let number = "43px";
 const bull = true;
@@ -1629,3 +1631,11 @@ builder.padEnd("^");
 console.log(builder.getValue()); // "^.^"
 builder.padBoth("=");
 console.log(builder.getValue()); // "=^.^="
+
+
+const CounterPlugin = function (config) {
+  console.log(config);
+ };
+
+
+const counter = new CounterPlugin();
