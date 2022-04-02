@@ -1633,9 +1633,9 @@ builder.padBoth("=");
 console.log(builder.getValue()); // "=^.^="
 
 
-const CounterPlugin = function (config) {
-  console.log(config);
- };
+// const CounterPlugin = function (config) {
+//   console.log(config);
+//  };
 
 
-const counter = new CounterPlugin();
+// const counter = new CounterPlugin();
