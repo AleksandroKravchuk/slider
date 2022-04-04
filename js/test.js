@@ -1783,3 +1783,123 @@ mango.blacklist("poly@mail.com");
 console.log(mango.blacklistedEmails); // ["poly@mail.com"]
 console.log(mango.isBlacklisted("mango@mail.com")); // false
 console.log(mango.isBlacklisted("poly@mail.com")); // true
+
+
+function showThis() {
+  console.log("this in showThis: ", this);
+}
+showThis()
+
+const user = {
+  username: "Mango",
+};
+user.showcontekst = showThis;
+user.showcontekst()
+
+
+
+
+const customer = {
+  firstName: "Jacob",
+  lastName: "Mercer",
+  name: 2,
+  getFullName() {
+    
+    return `${this.firstName} ${this.lastName}  ${this.name}`;
+    
+  },
+};
+
+console.log(customer.getFullName())
+
+function makeMessage(callback) {
+  
+  console.log(`Обрабатываем заявку от ${callback()}.`);
+}
+makeMessage(customer.getFullName.bind(customer));
+
+
+
+
+const hotel = {
+  username: "Resort hotel",
+  showThis() {
+    const foo = () => {
+      // Стрелки запоминают контекст во время объявления,
+      // из родительской области видимости
+      console.log("this in foo: ", this);
+    };
+
+    foo();
+    console.log("this in showThis: ", this);
+  },
+};
+
+hotel.showThis();
+// this in foo: {username: 'Resort hotel', showThis: ƒ}
+// this in showThis: {username: 'Resort hotel',showThis: ƒ}
+
+
+
+function greetGuest(greeting, greetings) {
+  console.log(`${this.username} ${greeting}, ${greetings}.`);
+}
+
+const mangos = {
+  username: "Манго",
+};
+const poly = {
+  username: "Поли",
+};
+
+greetGuest.apply(mangos, ["Добро пожаловать", "Привет Вика"]); // Добро пожаловать, Манго.
+greetGuest.call(poly, "С приездом"); // С приездом, Поли.
+
+
+
+
+
+
+function greet(clientName) {
+  return `${clientName}, добро пожаловать в «${this.service}».`;
+}
+
+const steam = {
+  service: "Steam",
+};
+const steamGreeter = greet.bind(steam);
+console.log(steamGreeter("Манго"))
+; // "Манго, добро пожаловать в «Steam»."
+
+const gmail = {
+  service: "Gmail",
+};
+const gmailGreeter = greet.bind(gmail);
+console.log(gmailGreeter("Поли"))
+; // "Поли, добро пожаловать в «Gmail»."
+
+
+
+
+const makeChange = function () {
+  const change = function (color) {
+    console.log(`Метод обекта`, this.color)
+  };
+  const sweater = {
+    color: `red`,
+  };
+   sweater.updataColor = change;
+
+  sweater.updataColor()
+// console.log(sweater.change);
+  return sweater.updataColor();
+  
+}
+
+ makeChange();
+// console.log(swpColor)
+// swpColor(`biue`)
+console.log(document)
+
+const non = document.querySelector(`.wrapper`)
+console.log(non)
