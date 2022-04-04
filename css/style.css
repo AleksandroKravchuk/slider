@@ -275,3 +275,16 @@ cursor: pointer;
         background-position: center;
         visibility         : visible;
     }
+
+
+    .calk {
+padding-top: 100px;
+display: flex;
+        
+    }
+
+    .js-value{
+        margin-left: 30px;
+        margin-right: 30px;
+        color: #D64374;
+    }
