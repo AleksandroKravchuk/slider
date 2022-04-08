@@ -1929,3 +1929,86 @@ dicrementBtn.addEventListener(`click`, function () {
 console.log(incrementBtn)
 console.log(dicrementBtn)
 console.log(valueBtn)
+
+
+const obj = {
+  from: 1,
+  to: 7,
+
+  [Symbol.iterator]: function () {
+    let current = this.from;
+    let last = this.to;
+
+    // метод должен вернуть объект с методом next()
+    return {
+      next() {
+        if (current <= last) {
+          return {
+            done: false,
+            value: current++,
+          };
+        } else {
+          return {
+            done: true,
+          };
+        }
+      },
+    };
+  },
+};
+
+for (const number of obj) {
+  console.log(number);
+}
+
+
+
+
+
+
+ class Account {
+  #balance;
+  #history;
+
+  constructor(amount) {
+    this.#balance = amount;
+    this.#history = [];
+  }
+
+  set balance(value) {
+    this.#history.push({
+      value,
+      type: 'set balance',
+    });
+
+    if (value < 0) {
+      console.log('Error ....');
+      return;
+    }
+
+    this.#balance -= value;
+  }
+
+  get balance() {
+    this.#history.push({
+      type: 'get balance',
+    });
+
+    return this.#balance;
+  }
+
+  static sum(a, b) {
+    console.log(a + b);
+  }
+}
+
+const account1 = new Account(2000);
+
+account1.balance = 200; // set
+
+console.log(account1.balance); // get
+
+console.log(account1);
+
+Account.sum(1, 1);
+// account1.sum(1, 1);
